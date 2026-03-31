@@ -22,16 +22,31 @@
 
 
 
+# from selenium import webdriver
+# from selenium.webdriver.common.by import By
+# import time
+# driver = webdriver.Chrome()
+
+# driver.get("https://the-internet.herokuapp.com/?utm_source=chatgpt.com")
+
+# element = driver.find_element(By.CSS_SELECTOR, 'a[href="/checkboxes"]')
+# element.click() 
+# # title = driver.find_element(By.TAG_NAME, "h1").text
+# # print(title)
+
+# time.sleep(10)
+
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 driver = webdriver.Chrome()
-
 driver.get("https://the-internet.herokuapp.com/?utm_source=chatgpt.com")
+time.sleep(5)
+btn_1 = driver.find_element(By.CSS_SELECTOR, "a[href='/download']" )
+btn_1.click()
+time.sleep(5)
 
-element = driver.find_element(By.CSS_SELECTOR, 'a[href="/checkboxes"]')
-element.click() 
-# title = driver.find_element(By.TAG_NAME, "h1").text
-# print(title)
-
+btn_2 = driver.find_element(By.CSS_SELECTOR, "a[href='download/upload-probe.txt']")
+btn_2.click()
 time.sleep(10)
