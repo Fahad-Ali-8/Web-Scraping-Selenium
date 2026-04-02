@@ -29,14 +29,15 @@ import time
 driver = webdriver.Chrome()
 driver.get("https://the-internet.herokuapp.com/add_remove_elements/?utm_source=chatgpt.com")
 element = driver.find_element(By.XPATH, "//button[normalize-space()='Add Element']")
-for i in range(3):
+for i in range(5):
     element.click() 
 
-buttons = driver.find_elements(By.XPATH, "//button[@class='added-manually']")
-for btn in buttons:
+delete_buttons = driver.find_elements(By.XPATH, "//button[@class='added-manually']")
+for btn in delete_buttons[0:2]:
     btn.click()
-buttons = driver.find_elements(By.XPATH, "//button[@class='added-manually']")
-if len(buttons) == 0:
+
+delete_buttons = driver.find_elements(By.XPATH, "//button[@class='added-manually']")
+if len(delete_buttons) == 0:
     print("Worked")
 else:
     print("SOmething is wrong")    
