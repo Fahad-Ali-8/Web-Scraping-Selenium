@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import time
 
-driver = webdriver.Chrome()
-driver.get("https://the-internet.herokuapp.com/checkboxes")
+#driver = webdriver.Chrome()
+#driver.get("https://the-internet.herokuapp.com/checkboxes")
 
 # check_box = driver.find_elements(By.XPATH, "//input[@type='checkbox']")
 
@@ -44,5 +44,14 @@ driver.get("https://the-internet.herokuapp.com/dropdown")
 
 drop_down = driver.find_element(By.XPATH, "//select[@id='dropdown']")
 drop_down.click()
+
+select = Select(drop_down)
+
+select.select_by_visible_text("Option 1")
+print("Selected:", select.first_selected_option.text)
+
+
+select.select_by_visible_text("Option 2")
+print("Selected:", select.first_selected_option.text) 
 
 time.sleep(5)
