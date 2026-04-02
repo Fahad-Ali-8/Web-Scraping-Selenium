@@ -12,8 +12,7 @@ email.send_keys("qa_testers@qabrains.com")
 
 password = driver.find_element(By.XPATH,"//input[@id='password']")
 driver.execute_script("arguments[0].scrollIntoView();", password)
-password.send_keys("Password123")
- 
+password.send_keys("Password123") 
 
 btn = driver.find_element(By.XPATH,"//button[normalize-space()='Login']")
 btn.click()
