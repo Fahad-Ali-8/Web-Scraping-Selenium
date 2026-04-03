@@ -26,11 +26,7 @@ contact = wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@id='c
 contact.send_keys("03239198902")
 
 date = wait.until(EC.presence_of_element_located((By.ID, "date")))
-
-driver.execute_script(
-
-    "arguments[0].value = '02/04/2026';", date
-)
+driver.execute_script("arguments[0].value = '02/04/2026';", date)
 
 color = wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Green']")))
 driver.execute_script("arguments[0].scrollIntoView();", color)
@@ -46,8 +42,6 @@ select = Select(country)
 select.select_by_visible_text("Pakistan")
 
 file_upload = wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@id='file']")))
-
-
 
 # If it's hidden, make it visible first
 driver.execute_script("arguments[0].style.display = 'block'; arguments[0].style.visibility = 'visible';", file_upload)
